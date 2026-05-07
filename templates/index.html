@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="game-container">
+
+    <div class="game-box">
+
+        <h1>🎮 GUESS THE NUMBER</h1>
+
+        <p class="info">
+            I am thinking of a number between
+            <span>1</span> and <span>100</span>
+        </p>
+
+        <div class="robot">🤖</div>
+
+        <form method="POST">
+
+            <input
+                type="number"
+                name="guess"
+                placeholder="Enter Your Guess"
+                required
+            >
+
+            <button type="submit">
+                PLAY NOW 🚀
+            </button>
+
+        </form>
+
+        {% if message %}
+        <div class="message">
+            {{ message }}
+        </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>
